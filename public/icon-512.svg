@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#0d1b2a"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+    <linearGradient id="neonGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f5a0"/>
+      <stop offset="100%" stop-color="#00d9f5"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded rect -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="4"/>
+
+  <!-- Concentric radar circles -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#00f2fe" stroke-opacity="0.15" stroke-width="2" stroke-dasharray="8 8"/>
+  <circle cx="256" cy="256" r="140" fill="none" stroke="#00f5a0" stroke-opacity="0.25" stroke-width="3"/>
+  <circle cx="256" cy="256" r="95" fill="none" stroke="#00f2fe" stroke-opacity="0.4" stroke-width="2"/>
+
+  <!-- Sound wave arcs (Ears) -->
+  <path d="M 120 256 A 136 136 0 0 1 155 160" fill="none" stroke="url(#neonCyan)" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M 392 256 A 136 136 0 0 0 357 160" fill="none" stroke="url(#neonCyan)" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M 100 256 A 166 166 0 0 1 145 130" fill="none" stroke="url(#neonGreen)" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+  <path d="M 412 256 A 166 166 0 0 0 367 130" fill="none" stroke="url(#neonGreen)" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- Eye Shape (Eyes) -->
+  <path d="M 130 256 C 180 180, 332 180, 382 256 C 332 332, 180 332, 130 256 Z" 
+        fill="#07111e" stroke="url(#neonCyan)" stroke-width="12" stroke-linejoin="round" filter="url(#glow)"/>
+
+  <!-- Iris -->
+  <circle cx="256" cy="256" r="54" fill="url(#neonGreen)"/>
+  
+  <!-- Pupil + AI Star / Aperture -->
+  <circle cx="256" cy="256" r="28" fill="#040812"/>
+  
+  <!-- AI Sparkle / Specular highlight -->
+  <circle cx="272" cy="240" r="10" fill="#ffffff" opacity="0.9"/>
+  <circle cx="244" cy="268" r="5" fill="#00f2fe" opacity="0.8"/>
+
+  <!-- Bottom sound pulse dot -->
+  <circle cx="256" cy="400" r="8" fill="#00f5a0" filter="url(#glow)"/>
+  <circle cx="230" cy="400" r="5" fill="#00f2fe" opacity="0.6"/>
+  <circle cx="282" cy="400" r="5" fill="#00f2fe" opacity="0.6"/>
+</svg>
